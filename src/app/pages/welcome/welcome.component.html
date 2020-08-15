@@ -1,0 +1,40 @@
+<div id="dashboard-container">
+  <div nz-row [nzGutter]="12">
+    <div nz-col nzSpan="12">
+      <nz-card nzTitle="Picture Books"
+               [nzHoverable]="true"
+      >
+        <nz-table #basicTable [nzData]="listOfData">
+          <thead>
+          <tr>
+            <th>Picture Book Name</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.pictureBookName }}</td>
+            <td>{{ data.pictureBookStatus }}</td>
+            <td>
+              <a>Replay</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a>Delete</a>
+            </td>
+          </tr>
+          </tbody>
+        </nz-table>
+      </nz-card>
+    </div>
+    <div nz-col nzSpan="12">
+      <nz-card nzTitle="Recent Searches"
+               [nzHoverable]="true"
+               >
+        <p>Card content</p>
+      </nz-card>
+    </div>
+  </div>
+  <ng-template #extraTemplate>
+    <a>More</a>
+  </ng-template>
+</div>
